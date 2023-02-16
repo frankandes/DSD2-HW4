@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Feb 16 16:58:13 2023
+# Process ID: 9096
+# Current directory: E:/VivadoProjects/DSD2-HW4/VivadoProj/Hw2.runs/synth_1
+# Command line: vivado.exe -log Ex2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Ex2.tcl
+# Log file: E:/VivadoProjects/DSD2-HW4/VivadoProj/Hw2.runs/synth_1/Ex2.vds
+# Journal file: E:/VivadoProjects/DSD2-HW4/VivadoProj/Hw2.runs/synth_1\vivado.jou
+# Running On: DESKTOP-OK3HDTO, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 10, Host memory: 17069 MB
+#-----------------------------------------------------------
+source Ex2.tcl -notrace
