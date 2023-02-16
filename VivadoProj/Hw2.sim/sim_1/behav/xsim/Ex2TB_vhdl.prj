@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../Hw2.srcs/sources_1/imports/DSD2-HW4/Ex2.vhd" \
-"../../../../Hw2.srcs/sources_1/imports/DSD2-HW4/Ex2TB.vhd" \
-
-# Do not sort compile order
-nosort
