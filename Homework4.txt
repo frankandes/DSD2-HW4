@@ -1,0 +1,113 @@
+-- Homework 4 file
+
+-- Exercise 6.10 (Harris and Harris Textbook, Chapter 6, Exercise 10)
+-- add $t0, $s0, $s1
+-- lw $t0, 0x20($t7)
+-- addi $s0, $0, −10
+
+-- Decoded add Instruction:
+-- 000000 10000 10001 01000 00000 100000
+-- hex: 0x02114020
+
+-- Decoded lw Instructions:
+-- 100011 10001 01000 0000000000010100
+-- hex: 0x8e280014
+
+-- Decoded addi Instruction:
+-- 001000 00000 10000 1111111111110110
+-- hex: 0x2010fff6
+
+-- Exercise 6.12 (Harris and Harris Textbook, Chapter 6, Exercise 12)
+-- a) which instructions from Exercise 6.10 are I-type instructions?
+-- addi
+-- lw
+
+-- b) Sign-extend the 16-bit immediate of each instruction from part (a)
+-- so that it becomes a 32-bit immediate.
+-- addi: 11111111111111111111111111110110
+-- lw:   00000000000000000000000000010100
+
+-- Exercise 6.14 (Harris and Harris Textbook, Chapter 6, Exercise 14)
+-- 0x20080000
+-- binary: 001000 00000 01000 0000000000000000
+-- instruction: addi $t0, $0, 0
+
+-- 0x20090001
+-- binary: 001000 00000 01001 0000000000000001
+-- instruction: addi $t1, $0, 1
+
+-- 0x0089502a
+-- binary: 000000 00100 01001 01010 00000 101010
+-- instruction: slt $t2, $a0, $t1
+
+-- 0x15400003
+-- binary: 000101 01010 00000 0000000000000011
+-- instruction: bne $t2, $0, 3
+
+-- 0x01094020
+-- binary: 000000 01000 01001 01000 00000 100000
+-- instruction: add $t0, $t0, $t1
+
+-- 0x21290002
+-- binary: 001000 01001 01001 0000000000000010
+-- instruction: addi $t1, $t1, 2
+
+-- 0x01001020
+-- binary: 000000 01000 00000 00010 00000 100000
+-- instruction: add $v0, $t0, $0
+
+-- The code above
+-- 1. initializes $t0 to 0
+-- 2. initializes $t1 to 1
+-- 3. compares $a0 to $t1
+-- 4. if $a0 is less than $t1, then it jumps to the next instruction
+-- 5. if $a0 is greater than or equal to $t1, then it adds $t0 and $t1
+-- 6. increments $t1 by 2
+-- 7. copies the value of $t0 to $v0
+
+
+--Give three examples from the MIPS architecture of each of the
+--architecture design principles: (1) simplicity favors regularity; (2) make the
+--common case fast; (3) smaller is faster; and (4) good design demands good
+--compromises. Explain how each of your examples exhibits the design principle.
+
+-- 1. simplicity favors regularity
+-- each instruction is 32 bits long and has a specific format.  This makes decoding
+-- instructions easier and faster.  The 32-bit instruction format is also used
+-- for the data memory, which makes it easier to access data.
+
+-- There are only 3 types of instructions: R-type, I-type, and J-type.  This makes
+-- decoding simpler
+
+-- Consistent numbers of operands for each instruction type.  This makes decoding
+-- simpler and hardware design easier.
+
+-- 2. make the common case fast
+-- dedicated register set makes it faster to access registers.
+
+-- The MIPS architecture is made up os simple and small instructions.  This makes
+-- it faster to execute instructions.
+
+-- THe simple architecture makes it easier to design a fast pipeline as well as
+-- as simpler decoding unit.
+
+-- 3. smaller is faster
+-- The MIPS architecture is made up of simple and small instructions.  This means
+-- less bits are required to represent each instruction.
+
+-- The number of registers is small.
+
+-- the combination of a small register set and memory makes it easier to design and 
+-- access large amounts of data.
+
+-- 4. good design demands good compromises
+-- MIPS provide support to access data in memory and not just registers.  This
+-- makes it easier to access large amounts of data, but it also makes it slower.
+
+-- MIPS is a very simple architecture.  This makes it easier to design and implement, but
+-- it also makes more complicated designs difficult to implement and requires more
+-- smaller instructions to be executed.
+
+-- MIPS also has a three format instruction set.  This makes decoding instructions
+-- slightly more complex than a single format instruction set, but it also makes
+-- it more flexible.
